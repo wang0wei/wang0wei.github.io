@@ -134,46 +134,35 @@
 <p>2.引用数据类型:除了基本类型,其他的都是引用类型.有数组,类,接口,Lambda等(引用理解起来和C/C++里面的指针类似).</p>
 <p>##3.2 输入输出</p>
 <ul>
-<li><p>使用引用类型Scanner进行输入.<br>  引用类型的使用一般分为三个步骤:<br>  1.导包<br>  <code>import java.util.Scanner;</code><br>  2.创建<br>  <code>Scanner sc=new Scanner(System.in);</code><br>  其中System.in代表从键盘输入<br>  3.使用</p>
-<pre><code>a)获取键盘输入的数字
-`int num=sc.nextInt();`
-b)获取键盘输入的字符串
-`String str=sc.next();`
-</code></pre></li>
+<li><p>使用引用类型Scanner进行输入.<br>  引用类型的使用一般分为三个步骤:<br>  1.导包<br>  <code>import java.util.Scanner;</code><br>  2.创建<br>  <code>Scanner sc=new Scanner(System.in);</code><br>  其中System.in代表从键盘输入<br>  3.使用<br>  a)获取键盘输入的数字<br>  <code>int num=sc.nextInt();</code><br>  b)获取键盘输入的字符串<br>  <code>String str=sc.next();</code></p>
+</li>
 <li><p>输出<br>  <code>System.out.println();//输出时换行,ln代表换行</code><br>  <code>System.out.print();//输出时不换行</code><br>  <code>System.out.printf();//也有C语言输出的方式</code></p>
 </li>
 </ul>
 <p>##3.3数组</p>
 <ul>
 <li>数组属于引用类型</li>
-<li>声明数组<pre><code>Java 中定义数组的语法有两种：
-type arrayName[];
-type[] arrayName;
-例:`int a[];`或者`int[] a`
-与C/C++不同,Java不允许在声明数组中的方括号内指定数组元素的个数.
-特别注意:
-`int []a,b[];`等价的声明是`int a[],b[][];`
+<li>声明数组<br>  Java 中定义数组的语法有两种：<br>  type arrayName[];<br>  type[] arrayName;<br>  例:<code>int a[];</code>或者<code>int[] a</code><br>  与C/C++不同,Java不允许在声明数组中的方括号内指定数组元素的个数.<br>  特别注意:<pre><code>`int []a,b[];`等价的声明是`int a[],b[][];`
 </code></pre></li>
-<li>遍历数组当中的元素  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>遍历数组当中的元素</li>
 </ul>
-<pre><code>可以写成:
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">5</span>];</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> i:a)&#123;</span><br><span class="line">System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</code></pre><ul>
-<li><p>数组初始化<br> 与C/C++类似<br> <code>int []array=new array[5];//动态初始化,指定数组长度</code><br> <code>int []array={1,2,3,4,5}//静态初始化,指定数组内容</code><br>##3.4运算符</p>
-</li>
-<li><p>基本运算符与C/C++类似,不在过多描述</p>
-</li>
-<li><p>instanceof运算符<br>  该运算符是二目运算符,左边的操作元是一个对象,右边的是一个类当左边的对象是右边的类或子类创建的对象时,该运算符运算的结果是true,否则是false.<br>##3.5表达式与语句</p>
-<p>if条件分支语句,switch开关语句,for循环语句,while循环语句,break和continue语句与C/C++相似,不在过多叙述.</p>
-</li>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以写成:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i:a)&#123;</span><br><span class="line">System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>数组初始化<br>与C/C++类似<br><code>int []array=new array[5];//动态初始化,指定数组长度</code><br><code>int []array={1,2,3,4,5}//静态初始化,指定数组内容</code></li>
 </ul>
+<p>##3.4运算符</p>
+<ul>
+<li>基本运算符与C/C++类似,不在过多描述</li>
+<li>instanceof运算符<br>  该运算符是二目运算符,左边的操作元是一个对象,右边的是一个类当左边的对象是右边的类或子类创建的对象时,该运算符运算的结果是true,否则是false.</li>
+</ul>
+<p>##3.5表达式与语句<br> if条件分支语句,switch开关语句,for循环语句,while循环语句,break和continue语句与C/C++相似,不在过多叙述.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/23/java/" data-id="cjto3p8j80000ngvdwntrd3uf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/03/23/java/" data-id="cjto40yw80000ykvd1rxssnqp" class="article-share-link">Share</a>
       
       
     </footer>
