@@ -69,7 +69,7 @@
     <article id="post-java" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/27/java/" class="article-date">
-  <time datetime="2019-03-27T00:01:29.473Z" itemprop="datePublished">2019-03-27</time>
+  <time datetime="2019-03-27T00:08:34.056Z" itemprop="datePublished">2019-03-27</time>
 </a>
     
   </div>
@@ -127,10 +127,11 @@
 <li><p>声明数组<br>Java 中定义数组的语法有两种：<br>type arrayName[];<br>type[] arrayName;<br>例:<code>int a[];</code>或者<code>int[] a</code><br>与C/C++不同,Java不允许在声明数组中的方括号内指定数组元素的个数.<br>特别注意:<br><code>int []a,b[];</code>等价的声明是<code>int a[],b[][];</code></p>
 </li>
 <li><p>遍历数组当中的元素</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> int[] a=new int [5];</span><br><span class="line">for(int i=0;i&lt;a.length;i++)&#123;</span><br><span class="line">System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>可以写成:<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i:a)&#123;</span><br><span class="line">System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以写成:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int[] a=new int [5];</span><br><span class="line">for(int i:a)&#123;</span><br><span class="line">System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>数组初始化<br>与C/C++类似<br><code>int []array=new array[5];//动态初始化,指定数组长度</code><br><code>int []array={1,2,3,4,5}//静态初始化,指定数组内容</code></li>
 </ul>
