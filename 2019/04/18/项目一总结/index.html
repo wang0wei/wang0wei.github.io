@@ -96,13 +96,17 @@
 
 
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="项目一总结一、数据库连接：JDBC1.加载JDBC驱动代码：Class.forname(com.mysql.cj.jdbc.Driver); JDBC   API是一系列数据库的接口，它使得应用程序能够进行数据库连接，执行SQL语句，并且得到返回结果。 java直接面向JDBC编程，JDBC给我们提供一种接口和方法，MySQL，Oracle，SQLserver，DB2提供这种接口的实现，用的是一种">
+<meta property="og:type" content="article">
 <meta property="og:title" content="王伟的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/04/18/项目一总结/index.html">
 <meta property="og:site_name" content="王伟的博客">
+<meta property="og:description" content="项目一总结一、数据库连接：JDBC1.加载JDBC驱动代码：Class.forname(com.mysql.cj.jdbc.Driver); JDBC   API是一系列数据库的接口，它使得应用程序能够进行数据库连接，执行SQL语句，并且得到返回结果。 java直接面向JDBC编程，JDBC给我们提供一种接口和方法，MySQL，Oracle，SQLserver，DB2提供这种接口的实现，用的是一种">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-18T08:59:34.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="王伟的博客">
+<meta name="twitter:description" content="项目一总结一、数据库连接：JDBC1.加载JDBC驱动代码：Class.forname(com.mysql.cj.jdbc.Driver); JDBC   API是一系列数据库的接口，它使得应用程序能够进行数据库连接，执行SQL语句，并且得到返回结果。 java直接面向JDBC编程，JDBC给我们提供一种接口和方法，MySQL，Oracle，SQLserver，DB2提供这种接口的实现，用的是一种">
 
 
 
@@ -110,7 +114,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/18/项目一总结/">
 
 
 
@@ -120,7 +124,7 @@
   };
 </script>
 
-  <title>王伟的博客</title>
+  <title> | 王伟的博客</title>
   
 
 
@@ -168,8 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -211,7 +214,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -273,9 +276,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -308,9 +311,7 @@
         
         
           <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/18/项目一总结/" class="post-title-link" itemprop="url">未命名</a>
+
               
             
           </h1>
@@ -374,9 +375,7 @@
       
 
       
-        
-          
-            <h1 id="项目一总结"><a href="#项目一总结" class="headerlink" title="项目一总结"></a>项目一总结</h1><h2 id="一、数据库连接：JDBC"><a href="#一、数据库连接：JDBC" class="headerlink" title="一、数据库连接：JDBC"></a>一、数据库连接：JDBC</h2><h3 id="1-加载JDBC驱动"><a href="#1-加载JDBC驱动" class="headerlink" title="1.加载JDBC驱动"></a>1.加载JDBC驱动</h3><p>代码：Class.forname(com.mysql.cj.jdbc.Driver);</p>
+        <h1 id="项目一总结"><a href="#项目一总结" class="headerlink" title="项目一总结"></a>项目一总结</h1><h2 id="一、数据库连接：JDBC"><a href="#一、数据库连接：JDBC" class="headerlink" title="一、数据库连接：JDBC"></a>一、数据库连接：JDBC</h2><h3 id="1-加载JDBC驱动"><a href="#1-加载JDBC驱动" class="headerlink" title="1.加载JDBC驱动"></a>1.加载JDBC驱动</h3><p>代码：Class.forname(com.mysql.cj.jdbc.Driver);</p>
 <p>JDBC   API是一系列数据库的接口，它使得应用程序能够进行数据库连接，执行SQL语句，并且得到返回结果。</p>
 <p>java直接面向JDBC编程，JDBC给我们提供一种接口和方法，MySQL，Oracle，SQLserver，DB2提供这种接口的实现，用的是一种多态。数据库想要支持java语言访问，必须提供JDBC这种接口的实现，这种接口的实现就叫JDBC驱动。</p>
 <p>需要包mysql-connector-java-8.0.15.jar</p>
@@ -431,8 +430,6 @@
 <p>3.代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先将文件加载到文件流FileInputStream中，再将文件流输入到ZipOutputStream；</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ZipCompressing</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> k = <span class="number">1</span>; <span class="comment">// 定义递归次数变量  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//zipFileName 所要压缩的文件的目录+压缩包名           inputFile要压缩的文件</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">zip</span><span class="params">(String zipFileName, File inputFile)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">	</span><br><span class="line">    System.out.println(<span class="string">"压缩中..."</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//ZipOutputStream ：DeflaterOutputStream的一个子类，把数据压缩成Zip文件格式。</span></span><br><span class="line">    <span class="comment">//此类实现输出流过滤器，用于以ZIP文件格式写入文件。包括对压缩和未压缩条目的支持</span></span><br><span class="line">    <span class="comment">//压缩输出流</span></span><br><span class="line">    ZipOutputStream out = <span class="keyword">new</span> ZipOutputStream(<span class="keyword">new</span> FileOutputStream(zipFileName));</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//BufferedOutputStream是缓冲输出流,继承于FilterOutputStream,作用是为另一个输出流提供“缓冲功能”</span></span><br><span class="line">    <span class="comment">//为ZipOutputStream提供一个缓冲输出流</span></span><br><span class="line">    <span class="comment">//该类实现缓冲输出流。</span></span><br><span class="line">    <span class="comment">//通过设置这样的输出流,应用程序可以将字节写入基础输出流，而不必为写入的每个字节调用底层系统。</span></span><br><span class="line">    BufferedOutputStream bo = <span class="keyword">new</span> BufferedOutputStream(out); </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//调用压缩方法,该方法的参数为</span></span><br><span class="line">    <span class="comment">//ZipOutputStream out压缩输出流对象</span></span><br><span class="line">    <span class="comment">// File inputFile要压缩的文件</span></span><br><span class="line">    <span class="comment">// File inputFile.getName()要压缩文件的名字</span></span><br><span class="line">    <span class="comment">// BufferedOutputStream bo缓冲输出流对象</span></span><br><span class="line">    ZipByType(out, inputFile, inputFile.getName(), bo);</span><br><span class="line">  </span><br><span class="line">    bo.close();<span class="comment">//关闭缓冲输出流</span></span><br><span class="line">    out.close();<span class="comment">//关闭压缩输出流</span></span><br><span class="line">    System.out.println(<span class="string">"压缩完成"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ZipOutputStream out压缩输出流对象</span></span><br><span class="line"><span class="comment">// File inputFile要压缩的文件</span></span><br><span class="line"><span class="comment">// String base要压缩文件的路径</span></span><br><span class="line"><span class="comment">// BufferedOutputStream bo缓冲输出流对象</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ZipByType</span><span class="params">(ZipOutputStream out, File f, String base,</span></span></span><br><span class="line"><span class="function"><span class="params">        BufferedOutputStream bo)</span> <span class="keyword">throws</span> Exception </span>&#123; </span><br><span class="line"></span><br><span class="line"><span class="comment">//java中的isDirectory()是检查一个对象是否是文件夹。返回值是boolean类型的。如果是则返回true，否则返回false。</span></span><br><span class="line">        <span class="keyword">if</span> (f.isDirectory())&#123; <span class="comment">//如果是文件夹</span></span><br><span class="line">        	</span><br><span class="line">    	<span class="comment">//File.listFiles()返回值类型,File对象数组 ;数组中元素内容,File对象类型的【完整路径】</span></span><br><span class="line">        File[] fl = f.listFiles();<span class="comment">//将文件夹里面的各个文件路径存到File数组中</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (fl.length == <span class="number">0</span>)&#123;<span class="comment">//如果是空文件夹</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ZipEntry 压缩文件的子文件对象，用于保存压缩文件中文件及其文件夹的一个实列</span></span><br><span class="line"><span class="comment">//putNextEntry(ZipEntry e);该函数用于添加一个压缩子文件或子文件夹，它需要一个ZipEntry对象。</span></span><br><span class="line"><span class="comment">//举一个例子说名该函数，如果在压缩文件中创建一个子文件夹，那么就是putNextEntry(new ZipEntry("Test/"));</span></span><br><span class="line"><span class="comment">//该语句就会在压缩文中，添加一个Test文件夹，注意，如果没有"/"，那么将创建一个Test文件。</span></span><br><span class="line">                out.putNextEntry(<span class="keyword">new</span> ZipEntry(base + <span class="string">"/"</span>)); <span class="comment">// 创建zip压缩进入点base</span></span><br><span class="line">                System.out.println(base + <span class="string">"/"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        <span class="comment">//如果不是空文件夹,递归遍历子文件,再对每个子文件判断是否为文件夹</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; fl.length; i++) &#123;</span><br><span class="line">        	ZipByType(out, fl[i], base + <span class="string">"/"</span> + fl[i].getName(), bo); </span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"第"</span> + k + <span class="string">"次递归"</span>);</span><br><span class="line">        k++;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (f.isFile()) &#123;<span class="comment">//如果不是文件夹而是单个文件</span></span><br><span class="line">        out.putNextEntry(<span class="keyword">new</span> ZipEntry(base)); <span class="comment">// 创建ZipEntry用于标记压缩文件中含有的条目</span></span><br><span class="line">        System.out.println(base);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//FileInputStream流 被称为文件字节输入流，意思指对文件数据以字节的形式进行读取操作如读取图片视频等</span></span><br><span class="line">        FileInputStream in = <span class="keyword">new</span> FileInputStream(f);</span><br><span class="line"></span><br><span class="line"><span class="comment">//BufferedInputStream 的作用是为另一个输入流添加一些功能，例如，提供“缓冲功能”以及支持mark()标记和reset()重置方法。</span></span><br><span class="line"><span class="comment">//BufferedInputStream 本质上是通过一个内部缓冲区数组实现的。</span></span><br><span class="line"><span class="comment">//例如，在新建某输入流对应的BufferedInputStream后，当我们通过read()读取输入流的数据时，</span></span><br><span class="line"><span class="comment">//BufferedInputStream会将该输入流的数据分批的填入到缓冲区中。</span></span><br><span class="line"><span class="comment">//每当缓冲区中的数据被读完之后，输入流会再次填充数据缓冲区；如此反复，直到我们读完输入流数据位置。</span></span><br><span class="line">        BufferedInputStream bi = <span class="keyword">new</span> BufferedInputStream(in);</span><br><span class="line">        <span class="keyword">int</span> b;</span><br><span class="line">          </span><br><span class="line"><span class="comment">//BufferedInputStream.read()里面</span></span><br><span class="line"><span class="comment">//当pos大于等于count的时候，证明buf数组中已经没有可以获取的数据，则需要fill()方法来扩充或者补充buf中的数据，</span></span><br><span class="line"><span class="comment">//如果经过fill()方法后，pos仍旧大于等于count，则代表stream已经被读完，则返回-1，代表已经被读完。</span></span><br><span class="line"><span class="comment">//如果经过fill()方法pos已经小于count或者本身pos已经小于count，那么直接返回buf[pos]上的数据，pos并自加准备取下一个位置上的数据。</span></span><br><span class="line">            <span class="keyword">while</span> ((b = bi.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">            bo.write(b); <span class="comment">// 将字节流写入当前zip目录</span></span><br><span class="line">        &#125;</span><br><span class="line">        bo.flush(); <span class="comment">//要注意在使用BufferedOutputStream写完数据后，要调用flush()方法或close()方法，</span></span><br><span class="line">                    <span class="comment">//强行将缓冲区中的数据写出.否则可能无法写出数据。</span></span><br><span class="line">                    <span class="comment">//此处不能使用close(),因为使用close()之后的文件就无法缓存,只能使用flush()</span></span><br><span class="line">                    <span class="comment">//刷新此缓冲的输出流,这会强制将任何缓冲的输出字节写出到底层输出流</span></span><br><span class="line">        bi.close();<span class="comment">//关闭缓存输入流</span></span><br><span class="line">        in.close(); <span class="comment">//关闭输入流</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 测试</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    ZipCompressing book = <span class="keyword">new</span> ZipCompressing();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        book.zip(<span class="string">"C:\\Users\\95645\\Desktop\\upload.zip"</span>,<span class="keyword">new</span> File(<span class="string">"C:\\Users\\95645\\eclipse-workspace\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\javaweb_v1.1\\upload"</span>));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
 
@@ -455,275 +452,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/29/java学习/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wangwei">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="王伟的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/29/java学习/" class="post-title-link" itemprop="url">未命名</a>
-              
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/2019/03/29/java学习/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-29 17:04:45 / 修改时间：21:36:31" itemprop="dateCreated datePublished" datetime="2019-03-29T17:04:45+08:00">2019-03-29</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <hr>
-<p>title: java学习<br>date: 2019-03-29 17:04:45<br>tags:</p>
-<h1 id="JAVA学习"><a href="#JAVA学习" class="headerlink" title="JAVA学习"></a><center><strong>JAVA学习</strong></center></h1><p>标签： java</p>
-<hr>
-<h1 id="1-使用eclipse遇到的问题"><a href="#1-使用eclipse遇到的问题" class="headerlink" title="1.使用eclipse遇到的问题"></a>1.使用eclipse遇到的问题</h1><h2 id="1-1怎样用eclipse编写第一个helloworld程序"><a href="#1-1怎样用eclipse编写第一个helloworld程序" class="headerlink" title="1.1怎样用eclipse编写第一个helloworld程序"></a>1.1怎样用eclipse编写第一个helloworld程序</h2><p>此处不做过多介绍,相关操作请点击<a href="https://jingyan.baidu.com/article/9c69d48fefa53113c9024eb3.html" target="_blank" rel="noopener">链接</a></p>
-<h2 id="1-2用eclipse怎么进行代码调试"><a href="#1-2用eclipse怎么进行代码调试" class="headerlink" title="1.2用eclipse怎么进行代码调试"></a>1.2用eclipse怎么进行代码调试</h2><ol>
-<li>首先要设置断点  设置断点的方法:在代码里需要调试的地方，鼠标双击代码行号的左边，  再次双击即可取消断点。<img src="/2019/03/29/java学习/断点.png" title="This is an image"></li>
-<li>开始调试 方法一: 点击功能区里的小瓢虫开始调试; 方法二: 鼠标点击main方法–&gt;右键Debug As–&gt;Java Application开始java代码调试; 方法三: 快捷键F11;<img src="/2019/03/29/java学习/调试.png" title="This is an image"></li>
-<li>进行调试 快捷键F5:表示进入当前方法内部，一步一步执行， 快捷键F6:表示运行下一行代码，执行当前行,但不进入执行细节， 快捷键F7:表示退出当前方法，返回到调用层。 快捷键F8:表示当前继续执行代码，直到遇到下一个断点.</li>
-</ol>
-<h2 id="1-3调试完成后怎么返回java视图"><a href="#1-3调试完成后怎么返回java视图" class="headerlink" title="1.3调试完成后怎么返回java视图?"></a>1.3调试完成后怎么返回java视图?</h2><p>通过IDE右上角的两个按钮进行切换<br><img src="/2019/03/29/java学习/切换.png" title="This is an image"></p>
-<h2 id="1-4怎么修改文件名称"><a href="#1-4怎么修改文件名称" class="headerlink" title="1.4怎么修改文件名称?"></a>1.4怎么修改文件名称?</h2><p>用鼠标点一文件,然后点File-&gt;Rename<br><img src="/2019/03/29/java学习/换名.png" title="This is an image"></p>
-<h2 id="1-5怎么恢复默认界面"><a href="#1-5怎么恢复默认界面" class="headerlink" title="1.5怎么恢复默认界面?"></a>1.5怎么恢复默认界面?</h2><p>恢复默认界面window-&gt;perspective-&gt;reset perspective<br><img src="/2019/03/29/java学习/界面.png" title="This is an image"></p>
-<h2 id="1-6怎么设置字体大小"><a href="#1-6怎么设置字体大小" class="headerlink" title="1.6怎么设置字体大小?"></a>1.6怎么设置字体大小?</h2><p>设置字体大小window-&gt;preferences-&gt;general-&gt;appearance-&gt;colors and fonts<br><img src="/2019/03/29/java学习/字体设置.png" title="This is an image"></p>
-<h2 id="1-7怎么显示行号"><a href="#1-7怎么显示行号" class="headerlink" title="1.7怎么显示行号?"></a>1.7怎么显示行号?</h2><p>编辑区最左边右键show line numbers,显示行号.<br><img src="/2019/03/29/java学习/行号显示.png" title="This is an image"></p>
-<hr>
-<h1 id="2-常用快捷键"><a href="#2-常用快捷键" class="headerlink" title="2.常用快捷键"></a>2.常用快捷键</h1><ul>
-<li>添加单行注释:Ctrl+/(取消:Ctrl+/)</li>
-<li>添加多行注释:Shift+Ctrl+/(取消:Shift+Ctrl+/)</li>
-<li>向下复制一行:Ctrl+Alt+向下(向上同理)</li>
-<li>向上移动代码:Alt+向上(向下同理)</li>
-<li>格式化代码:Ctrl+Shift+F(注意关闭搜狗输入法里面相同的快捷键)</li>
-<li>智能提示:Alt+/</li>
-<li>同时选中所有相同内容:Alt+Shift+R</li>
-<li><p>自动导包:Ctrl+Shift+O(前提是有main方法)</p>
-<hr>
-<h1 id="3-基本语法"><a href="#3-基本语法" class="headerlink" title="3.基本语法:"></a>3.基本语法:</h1></li>
-</ul>
-<h2 id="3-1-数据类型"><a href="#3-1-数据类型" class="headerlink" title="3.1 数据类型"></a>3.1 数据类型</h2><p>java数据类型有两种:<br> 1.基本数据类型(包括4类8种):</p>
-<ul>
-<li>逻辑类型:boolean  只有true和false两个值,<br>区别于C/C++不能用0代表false,用&gt;=1的值代表true</li>
-<li>整数类型:整型默认为int型 <ul>
-<li>byte型:    1个字节//区别于C/C++新增的类型</li>
-<li>short型:   2个字节</li>
-<li>int型:     4个字节</li>
-<li>long型:    8个字节</li>
-</ul>
-</li>
-<li>字符类型:  char,2个字节</li>
-<li>浮点类型:浮点型默认为double型<ul>
-<li>float型:   4个字节  数值后面要跟f或F</li>
-<li>double型:  8个字节  </li>
-</ul>
-</li>
-</ul>
-<p>2.引用数据类型:除了基本类型,其他的都是引用类型.有数组,类,接口,Lambda等(引用理解起来和C/C++里面的指针类似).</p>
-<h2 id="3-2-输入输出"><a href="#3-2-输入输出" class="headerlink" title="3.2 输入输出"></a>3.2 输入输出</h2><ul>
-<li>使用引用类型Scanner进行输入.<br>  引用类型的使用一般分为三个步骤:<br>  1.导包<br>  <code>import java.util.Scanner;</code><br>  2.创建<br>  <code>Scanner sc=new Scanner(System.in);</code><br>  其中System.in代表从键盘输入<br>  3.使用<br>  a)获取键盘输入的数字<br>  <code>int num=sc.nextInt();</code><br>  b)获取键盘输入的字符串<br>  <code>String str=sc.next();</code></li>
-</ul>
-<p>什么是包?</p>
-<blockquote>
-<p>为了更好地组织类，Java提供了包机制。包是类的容器，用于分隔类名空间。如果没有指定包名，所有的示例都属于一个默认的无名包。<br>Java中的包一般均包含相关的类，例如，所有关于交通工具的类都可以放到名为Transportation的包中。<br>程序员可以使用package指明源文件中的类属于哪个具体的包。包语句的格式为：<br>package pkg1[．pkg2[．pkg3…]]；</p>
-</blockquote>
-<ul>
-<li>输出<br>  <code>System.out.println();//输出时换行,ln代表换行</code><br>  <code>System.out.print();//输出时不换行</code><br>  <code>System.out.printf();//也有支持C语言输出的方式</code></li>
-</ul>
-<h2 id="3-3-数组"><a href="#3-3-数组" class="headerlink" title="3.3 数组"></a>3.3 数组</h2><ul>
-<li>数组属于引用类型</li>
-<li><p>声明数组<br>Java 中定义数组的语法有两种：<br>type arrayName[];<br>type[] arrayName;<br>例:<code>int a[];</code>或者<code>int[] a</code><br>与C/C++不同,Java不允许在声明数组中的方括号内指定数组元素的个数.<br>特别注意:<br><code>int []a,b[];</code>等价的声明是<code>int a[],b[][];</code></p>
-</li>
-<li><p>数组初始化<br><code>int []array=new array[5];//动态初始化,指定数组长度</code><br><code>int []array={1,2,3,4,5}//静态初始化,指定数组内容</code></p>
-</li>
-<li><p>遍历数组当中的元素</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;a.length;i++)&#123;</span><br><span class="line">System.out.println(a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以写成:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span> [<span class="number">5</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i:a)&#123;</span><br><span class="line">System.out.println(a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Java中的数组是对象。数组保存的仅仅是对象的引用，而不是对象本。<br>在C/C++中，我们定义的变量所需的空间都是分配在栈上的，而new所需的空间都是分配在堆上的,在栈上的变量必须在代码中明确指出大小，所以在C/C++中定义数组必须指定大小,而JAVA中所有的变量都是引用，换个角度理解就是C++中的指针，所以在JAVA中的变量都是后期分配的。</p>
-<h2 id="3-4-java内存分配"><a href="#3-4-java内存分配" class="headerlink" title="3.4 java内存分配"></a>3.4 java内存分配</h2><ol>
-<li>栈(Stack):主要用来存放局部变量</li>
-<li>堆(Heap):凡是new出来的东西，都在堆当中。堆当中的数据有默认规则：<br>a) 如果是整数，默认是0；<br>b)如果是浮点数，默认是0.0；<br>c)如果是字符型，默认是’\u0000’(Unicode写法)；<br>d)如果是布尔类型，默认是false；<br>e)如果是引用类型(包含字符串)，默认是null(空常量)。</li>
-<li>方法区：存放与.class相关的信息</li>
-<li>本地方法区：与操作系统相关</li>
-<li>寄存器：与CPU相关</li>
-</ol>
-<h2 id="3-5-运算符"><a href="#3-5-运算符" class="headerlink" title="3.5 运算符"></a>3.5 运算符</h2><p>1.算术运算符：+，-，*，/，%<br>2.自增、自减运算符：++，–<br>3.关系运算符：&gt;,&lt;,&gt;=,&lt;=,==,!=<br>4.赋值运算符：=<br>5.位运算符：按位与&amp;，按位或|，按位非~，按位异或^</p>
-<ul>
-<li><p>基本运算符与C/C++类似,不再过多描述，若想了解更多，请点击此<a href="https://jingyan.baidu.com/article/67662997949e9154d51b8493.html" target="_blank" rel="noopener">链接</a></p>
-</li>
-<li><p>instanceof运算符<br>该运算符是二目运算符,左边的操作元是一个对象,右边的是一个类当左边的对象是右边的类或子类创建的对象时,该运算符运算的结果是true,否则是false.</p>
-</li>
-</ul>
-<h2 id="3-6-表达式与语句"><a href="#3-6-表达式与语句" class="headerlink" title="3.6 表达式与语句"></a>3.6 表达式与语句</h2><p> if条件分支语句,switch开关语句,for循环语句,while循环语句,break和continue语句与C/C++相似,不再过多叙述.</p>
-<h2 id="3-7方法的定义与调用"><a href="#3-7方法的定义与调用" class="headerlink" title="3.7方法的定义与调用"></a>3.7方法的定义与调用</h2><ul>
-<li>定义一个方法的格式<br>修饰符 返回值类型 方法名称(参数类型 参数名){<br>方法体;<br>return 返回值;<br>}</li>
-</ul>
-<p>例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>方法重载：方法的名称相同,但是参数列表不同<br>例：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">sum</span><span class="params">(<span class="keyword">double</span> a,<span class="keyword">double</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>注意：重载与返回值类型无关，与参数名称无关。<br>参数表不同包括：参数的个数不同，参数的类型不同，参数的顺序不同。</p>
-<ul>
-<li>参数传递的原则</li>
-</ul>
-<p>基本数据类型参数传递<br><img src="/2019/03/29/java学习/jiben.png" title="This is an image"></p>
-<p>引用数据类型参数传递<br><img src="/2019/03/29/java学习/yinyong.png" title="This is an image"></p>
-<h1 id="4-类与对象"><a href="#4-类与对象" class="headerlink" title="4.类与对象"></a>4.类与对象</h1><h2 id="4-1类的定义与使用"><a href="#4-1类的定义与使用" class="headerlink" title="4.1类的定义与使用"></a>4.1类的定义与使用</h2><ol>
-<li><p>如何定义类？<br>类是用来模拟现实世界事物的代码手段，事物分成属性和行为两个部分，类当中也包含两个部分：<br>a)成员变量(属性)：将变量定义在类中，在方法外，即为成员变量<br>b)成员方法(行为)：将普通的方法去掉static即为成员方法</p>
-</li>
-<li><p>如何使用类?<br>类是一种引用类型，使用起来可以分为三个步骤：<br>a)导包<br>如果需要使用的目标类和当前的类（含main方法）位于同一个包下，那么可以省略导包不写；否则需要使用import导包语句</p>
-<p>b)创建<br>类名称  对象名 = new 类名称（）;</p>
-<p>c)使用<br>使用成员变量：对象名.成员变量名<br>使用成员方法：对象名.成员方法名(参数)</p>
-<p>例：键盘输入的操作</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;<span class="comment">//导包</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScannerString</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);<span class="comment">//创建</span></span><br><span class="line">		System.out.println(<span class="string">"请输入字符串:"</span>);</span><br><span class="line">		String str = sc.next();<span class="comment">//使用</span></span><br><span class="line">		System.out.println(<span class="string">"字符串为: "</span> + str);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="4-2-构造方法"><a href="#4-2-构造方法" class="headerlink" title="4.2 构造方法"></a>4.2 构造方法</h2><p>构造方法就是专门用来创建对象的方法。当通过new关键字创建对象时，其实就是在调用构造方法。</p>
-<p>构造方法的格式和C++类的构造方法相同：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> 构造方法名(参数类型 参数名)&#123;</span><br><span class="line">方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>注意 ：构造方法没有返回值类型，并且构造方法名要和类名一样</p>
-<p>创建一个类的时候，写好成员变量后可以快速添加构造函数，如下图：<br><img src="/2019/03/29/java学习/添加构造函数.png" title="This is an image"></p>
-<p>也可以为每个成员变量快速添加getter和setter函数，如下图：<br></p>
-<h2 id="4-3对象的创建与使用"><a href="#4-3对象的创建与使用" class="headerlink" title="4.3对象的创建与使用"></a>4.3对象的创建与使用</h2><ul>
-<li><p>对象的创建<br>格式：<br>类的名字  对象名字；</p>
-</li>
-<li><p>对象的使用：<br>对象操作自己的变量(体现对象的属性)<br>对象.变量</p>
-<p>对象调用类中的方法：<br>对象.方法</p>
-</li>
-</ul>
-<h2 id="4-4-垃圾收集机制"><a href="#4-4-垃圾收集机制" class="headerlink" title="4.4 垃圾收集机制"></a>4.4 垃圾收集机制</h2><p>和C++不同，在java语言中，类有构造方法，但没有析构方法，java运行环境有“垃圾收集”机制，因此不必像C++程序员那样，要时刻自己检查哪些对象应该使用析构方法释放内存，java运行环境的“垃圾收集”发现堆中分配的实体不再被栈中任何对象引用时，就会释放该实体在堆中占用的内存。因此java很少出现“内存泄漏”，即由于程序忘记释放内存所导致的内存溢出。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -733,14 +483,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -760,8 +511,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -807,6 +567,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目一总结"><span class="nav-number">1.</span> <span class="nav-text">项目一总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、数据库连接：JDBC"><span class="nav-number">1.1.</span> <span class="nav-text">一、数据库连接：JDBC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-加载JDBC驱动"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.加载JDBC驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-连接MySQL数据库"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.连接MySQL数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-创建一个statement"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.创建一个statement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-执行SQL"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.执行SQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-处理结果"><span class="nav-number">1.1.5.</span> <span class="nav-text">5.处理结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-关闭JDBC对象，释放资源"><span class="nav-number">1.1.6.</span> <span class="nav-text">6.关闭JDBC对象，释放资源</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -935,6 +712,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -950,6 +731,8 @@
 
   
 
+
+  
 
 
   
