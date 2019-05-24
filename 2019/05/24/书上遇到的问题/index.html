@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="第10章       数据库连接池与DBUtils工具一.DBCP数据源下载链接:http://commons.apache.org/proper/ 打开链接后是这样的:  ###  按照书上所说在上面的网址中下载commons-dbcp.jar包和commoms-pool.jar。 1.找到commons-dbcp/，点开  2.在Releases下找到download，点开。根据版本下载相应的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于《Java Web程序设计任务教程》学习遇到的问题">
+<meta property="og:url" content="http://yoursite.com/2019/05/24/书上遇到的问题/index.html">
+<meta property="og:site_name" content="二十一的博客">
+<meta property="og:description" content="第10章       数据库连接池与DBUtils工具一.DBCP数据源下载链接:http://commons.apache.org/proper/ 打开链接后是这样的:  ###  按照书上所说在上面的网址中下载commons-dbcp.jar包和commoms-pool.jar。 1.找到commons-dbcp/，点开  2.在Releases下找到download，点开。根据版本下载相应的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/2019/05/24/书上遇到的问题/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/24/书上遇到的问题/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/24/书上遇到的问题/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/24/书上遇到的问题/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/24/书上遇到的问题/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/24/书上遇到的问题/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/05/24/书上遇到的问题/7.png">
+<meta property="og:updated_time" content="2019-05-24T08:26:31.174Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于《Java Web程序设计任务教程》学习遇到的问题">
+<meta name="twitter:description" content="第10章       数据库连接池与DBUtils工具一.DBCP数据源下载链接:http://commons.apache.org/proper/ 打开链接后是这样的:  ###  按照书上所说在上面的网址中下载commons-dbcp.jar包和commoms-pool.jar。 1.找到commons-dbcp/，点开  2.在Releases下找到download，点开。根据版本下载相应的">
+<meta name="twitter:image" content="http://yoursite.com/2019/05/24/书上遇到的问题/1.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/2019/05/24/书上遇到的问题/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>基于《Java Web程序设计任务教程》学习遇到的问题 | 二十一的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">二十一的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/书上遇到的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wangwei">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="二十一的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于《Java Web程序设计任务教程》学习遇到的问题
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-24 16:13:52 / 修改时间：16:26:31" itemprop="dateCreated datePublished" datetime="2019-05-24T16:13:52+08:00">2019-05-24</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="第10章-数据库连接池与DBUtils工具"><a href="#第10章-数据库连接池与DBUtils工具" class="headerlink" title="第10章       数据库连接池与DBUtils工具"></a>第10章       数据库连接池与DBUtils工具</h2><h3 id="一-DBCP数据源"><a href="#一-DBCP数据源" class="headerlink" title="一.DBCP数据源"></a>一.DBCP数据源</h3><p>下载链接:<a href="http://commons.apache.org/proper/" target="_blank" rel="noopener">http://commons.apache.org/proper/</a></p>
+<p>打开链接后是这样的:</p>
+<img src="/2019/05/24/书上遇到的问题/1.png" title="This is an image">
+<p>### </p>
+<p>按照书上所说在上面的网址中下载commons-dbcp.jar包和commoms-pool.jar。</p>
+<p>1.找到commons-dbcp/，点开</p>
+<img src="/2019/05/24/书上遇到的问题/2.png" title="This is an image">
+<p>2.在Releases下找到download，点开。根据版本下载相应的包，下载bin.zip和src.zip。</p>
+<img src="/2019/05/24/书上遇到的问题/3.png" title="This is an image">
+<p>3.bin.zip解压后打开bin文件夹，里面就有.jar。src.zip是用来查看文档用的，就是你用了一个外包里面的函数，想看一下这个函数的内部有些什么东西，就可以给那个外包添加这个src.zip。当你ctrl+鼠标左键便可以查看了。这里已经更新到了commons-dbcp2-2.6.0，跟书上的版本不同。</p>
+<p>4.按照书上P287的例题做一遍，会发现程序报错</p>
+<img src="/2019/05/24/书上遇到的问题/4.png" title="This is an image">
+<p>后来我百度了一下，使用dbcp2除了需要书上所说的依赖包commons-pool.jar外，<strong><u>还需要一个commons-logging.jar包</u></strong>。这个包也是在上面那个链接里面下载。</p>
+<p>5.还有就是如果大家使用的dbcp2的话，按照书上写的bds.之后根本没有<strong><u>setMaxActive()</u></strong>这个函数，因为在bdcp2包中这个函数换了一个名字，叫做<strong><u>setMaxTotal</u></strong>。所以非常坑，一个简单的程序竟是错，搞得人心态都崩了。</p>
+<h3 id="二、C3P0数据源"><a href="#二、C3P0数据源" class="headerlink" title="二、C3P0数据源"></a>二、C3P0数据源</h3><p>下载链接：<a href="https://sourceforge.net/projects/c3p0/" target="_blank" rel="noopener">https://sourceforge.net/projects/c3p0/</a></p>
+<p>1.打开网页后往下滑，找到下图位置：</p>
+<img src="/2019/05/24/书上遇到的问题/5.png" title="This is an image">
+<p>也是下载bin.zip和src.zip</p>
+<p>2.按照书上P290的例题做一遍会发现会报错：</p>
+<img src="/2019/05/24/书上遇到的问题/6.png" title="This is an image">
+<p>这是因为除了需要引入c3p0-0.9.5.4.jar外，还需要引入<strong><u>mchange-commons-java-0.2.15.jar</u></strong>，然而书上并没有说，对我们这种菜鸟来说真是一种折磨</p>
+<h2 id="第11章-JSP开发模型"><a href="#第11章-JSP开发模型" class="headerlink" title="第11章      JSP开发模型"></a>第11章      JSP开发模型</h2><h3 id="基于书上P310例题遇到的问题"><a href="#基于书上P310例题遇到的问题" class="headerlink" title="基于书上P310例题遇到的问题"></a>基于书上P310例题遇到的问题</h3><p>1.RegisterFormBean.java中的validate函数里面的name.trim(),这个trim（）是什么函数？</p>
+<p>trim()方法返回调用字符串对象的一个副本，但是<strong><u>所有起始和结尾的空格都被删除</u></strong>。</p>
+<p>2.ControllerServlet里面两个if里面的return可有可无？</p>
+<p>当我第一遍敲代码的时候以为这个return是多余的，于是把它去掉了，然后跑一下程序出来了一大坨红色恐怖的XXX，又让我怀疑人生了。</p>
+<img src="/2019/05/24/书上遇到的问题/7.png" title="This is an image">
+<p>于是我百度了一下这个错误，得到了解决，这个return看似无用，实则有大用！</p>
+<p>之前在使用Servlet的时候，总是在 doGet()/doPost() 的最后一行才使用请求转发或者重定向。如果需要根据条件来判断进行不同的请求转发或者重定向就会报错。报异常的原因是重复转发或者重定向了请求，如果有多个转发或者重定向，需要在每个转发或者重定向请求之后加上return语句(最后一个请求转发或者重定向不需要加return)。通过return语句确保在转发或者重定向请求之后返回，避免在执行上边的转发/重定向之后，接着继续往下执行转发/重定向请求，这样就不会再报这个异常了。</p>
+<p>原来根据条件判断进行不同的请求转发或者重定向需要在请求之后加一个return语句，<strong><u>来确保在请求转发或重定向之后返回，避免再执行上边的转发或者重定向之后，会继续往下执行转发或者重定向请求</u></strong>。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/10/给javaweb程序设置字符编码过滤器/" rel="next" title="给javaweb出现设置字符编码">
+                <i class="fa fa-chevron-left"></i> 给javaweb出现设置字符编码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">wangwei</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第10章-数据库连接池与DBUtils工具"><span class="nav-number">1.</span> <span class="nav-text">第10章       数据库连接池与DBUtils工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-DBCP数据源"><span class="nav-number">1.1.</span> <span class="nav-text">一.DBCP数据源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、C3P0数据源"><span class="nav-number">1.2.</span> <span class="nav-text">二、C3P0数据源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第11章-JSP开发模型"><span class="nav-number">2.</span> <span class="nav-text">第11章      JSP开发模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于书上P310例题遇到的问题"><span class="nav-number">2.1.</span> <span class="nav-text">基于书上P310例题遇到的问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wangwei</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/next-boot.js?v=7.0.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
