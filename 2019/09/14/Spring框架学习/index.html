@@ -106,7 +106,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/09/14/Spring框架学习/spring框架.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/14/Spring框架学习/aop需要的jar.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/14/Spring框架学习/aop运行结果.png">
-<meta property="og:updated_time" content="2019-09-14T01:47:01.894Z">
+<meta property="og:updated_time" content="2019-09-14T01:58:08.802Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring框架学习">
 <meta name="twitter:description" content="Spring框架简介及官方压缩包目录介绍（Spring框架不是哪一层的框架，哪里都在）  主要发明者：Rod Johnson  轮子理论推崇者  Spring框架宗旨：不重新发明技术，让原有技术使用起来更加方便  Spring几大核心功能 IoC/DI：控制反转/依赖注入 AOP：面向切面编程 声明式事务     Spring框架runtime  Test：spring提供测试功能 Core Co">
@@ -336,7 +336,7 @@
                 
               
 
-              <time title="创建时间：2019-09-14 09:24:22 / 修改时间：09:47:01" itemprop="dateCreated datePublished" datetime="2019-09-14T09:24:22+08:00">2019-09-14</time>
+              <time title="创建时间：2019-09-14 09:24:22 / 修改时间：09:58:08" itemprop="dateCreated datePublished" datetime="2019-09-14T09:24:22+08:00">2019-09-14</time>
             
 
             
@@ -558,7 +558,7 @@
 </ol>
 <pre><code>1. 如果list中就只有一个值
 
-   <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"list"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"list"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </code></pre><ol start="4">
 <li><p>如果属性是数组</p>
 <ol>
@@ -638,9 +638,11 @@
 <li>配置spring配置文件时在 <code>&lt;aop:config&gt;</code>配置</li>
 </ol>
 </li>
-<li>AspectJ<pre><code>1. 每个通知不需要实现接口或类
-</code></pre><ol start="2">
+<li>AspectJ<ol>
+<li>每个通知不需要实现接口或类<ol start="2">
 <li>配置spring配置文件是在 <code>&lt;aop:config&gt;</code>的子标签 <code>&lt;aop:aspect&gt;</code>中配置</li>
+</ol>
+</li>
 </ol>
 </li>
 </ol>
@@ -673,9 +675,9 @@
 </li>
 <li><p>配置spring配置文件</p>
 <ol>
-<li><p>引入aop命名空间：xmlns:aop=”<a href="http://www.springframework.org/schema/aop&quot;" target="_blank" rel="noopener">http://www.springframework.org/schema/aop&quot;</a></p>
-<p>加上<a href="http://www.springframework.org/schema/aop" target="_blank" rel="noopener">http://www.springframework.org/schema/aop</a></p>
-<pre><code>http://www.springframework.org/schema/aop/spring-aop.xsd
+<li><p>引入aop命名空间：<code>xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;</code></p>
+<p>加上<code>http://www.springframework.org/schema/aop</code></p>
+<pre><code>`http://www.springframework.org/schema/aop/spring-aop.xsd`
 </code></pre></li>
 <li><p>配置通知类的 <code>&lt;bean&gt;</code></p>
 </li>
@@ -705,16 +707,20 @@
 <li><p>新建类，在类中写任意名称的方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThrowAdvice</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">myexception</span><span class="params">(Exception e)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"执行异常通知,异常message："</span>+e.getMessage());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+</li>
+</ol>
+<ol start="2">
 <li><p>在spring配置文件中配置</p>
 <ol>
-<li><code>&lt;aop:aspect</code>&gt;的ref属性表示：方法在哪个类中</li>
+<li><code>&lt;aop:aspect</code>&gt;的ref属性表示：方法在哪个类中<ol start="2">
 <li><code>&lt;aop:xxxx/&gt;</code>表示什么通知，例如 <code>&lt;aop:after-throwing&gt;</code>表示异常通知</li>
 <li>method：当触发这个通知时，调用哪个方法</li>
 <li>其中throwing：异常对象名，必须和通知中方法参数名相同（可以不在通知中声明异常对象）</li>
 </ol>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"demo"</span> <span class="attr">class</span>=<span class="string">"com.bjsxt.test.Demo"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"mythrow"</span> <span class="attr">class</span>=<span class="string">"com.bjsxt.advice.MyThrowAdvice"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">   </span><br><span class="line">   <span class="tag">&lt;<span class="name">aop:config</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">aop:aspect</span> <span class="attr">ref</span>=<span class="string">"mythrow"</span>&gt;</span></span><br><span class="line">   			<span class="tag">&lt;<span class="name">aop:pointcut</span> <span class="attr">expression</span>=<span class="string">"execution(* com.bjsxt.test.Demo.demo1())"</span> <span class="attr">id</span>=<span class="string">"mypoint"</span>/&gt;</span></span><br><span class="line">   			<span class="tag">&lt;<span class="name">aop:after-throwing</span> <span class="attr">method</span>=<span class="string">"myexception"</span> <span class="attr">pointcut-ref</span>=<span class="string">"mypoint"</span> <span class="attr">throwing</span>=<span class="string">"e"</span>/&gt;</span></span><br><span class="line">  	 	<span class="tag">&lt;/<span class="name">aop:aspect</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"demo"</span> <span class="attr">class</span>=<span class="string">"com.bjsxt.test.Demo"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"mythrow"</span> <span class="attr">class</span>=<span class="string">"com.bjsxt.advice.MyThrowAdvice"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">   </span><br><span class="line">   <span class="tag">&lt;<span class="name">aop:config</span>&gt;</span></span><br><span class="line">   		<span class="tag">&lt;<span class="name">aop:aspect</span> <span class="attr">ref</span>=<span class="string">"mythrow"</span>&gt;</span></span><br><span class="line">   			<span class="tag">&lt;<span class="name">aop:pointcut</span> <span class="attr">expression</span>=<span class="string">"execution(* com.bjsxt.test.Demo.demo1())"</span> <span class="attr">id</span>=<span class="string">"mypoint"</span>/&gt;</span></span><br><span class="line">   			<span class="tag">&lt;<span class="name">aop:after-throwing</span> <span class="attr">method</span>=<span class="string">"myexception"</span> <span class="attr">pointcut-ref</span>=<span class="string">"mypoint"</span> <span class="attr">throwing</span>=<span class="string">"e"</span>/&gt;</span></span><br><span class="line">  	 	<span class="tag">&lt;/<span class="name">aop:aspect</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <h1 id="异常通知（Schema-based方式）"><a href="#异常通知（Schema-based方式）" class="headerlink" title="异常通知（Schema-based方式）"></a>异常通知（Schema-based方式）</h1><ol>
@@ -782,8 +788,8 @@
 <h1 id="使用注解-基于Aspect"><a href="#使用注解-基于Aspect" class="headerlink" title="使用注解(基于Aspect)"></a>使用注解(基于Aspect)</h1><ol>
 <li><p>spring不会自动去寻找注解，必须告诉spring哪些包下的类中可能有有注解</p>
 <ol>
-<li><p>引入命名空间：xmlns:context =”<a href="http://www.springframework.org/schema/context&quot;" target="_blank" rel="noopener">http://www.springframework.org/schema/context&quot;</a></p>
-<p>在 xsi:schemaLocation加上<a href="http://www.springframework.org/schema/context" target="_blank" rel="noopener">http://www.springframework.org/schema/context</a><br>和<a href="http://www.springframework.org/schema/context/spring-context.xsd" target="_blank" rel="noopener">http://www.springframework.org/schema/context/spring-context.xsd</a></p>
+<li><p>引入命名空间：<code>xmlns:context =&quot;http://www.springframework.org/schema/context&quot;</code></p>
+<p>在 xsi:schemaLocation加上<code>http://www.springframework.org/schema/context</code><br>和<code>http://www.springframework.org/schema/context/spring-context.xsd</code></p>
 </li>
 </ol>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context:component-scan</span> <span class="attr">base-package</span>=<span class="string">"com.bjsxt.advice"</span>&gt;</span><span class="tag">&lt;/<span class="name">context:component-scan</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -1036,29 +1042,41 @@
 <li>isolation=””事务隔离级别，在多线程或并发访问下如何保证访问到的数据具有完整性的</li>
 <li>脏读：<pre><code>1. 一个事务(A)读取到另一个事务(B)中未提交的数据，另一个事务中数据可能进行了改变，此时A事务读取的数据就可能和数据库中数据不一致，此时认为数据是脏数据，读脏数据的过程就叫做脏读
 </code></pre></li>
-<li>不可重复读：<pre><code>1. 主要针对的是某行数据(或行中某列)
- 2. 主要针对的操作是修改操作
- 3. 两次读取在同一个事务内
- 4. 当事务A第一次读取事务后， 事务B对事务A读取的数据进行修改，事务A中再次读取的数据和之前读取的数据不一致，过程不可重复读
-</code></pre></li>
-<li>幻读：<pre><code>1. 主要针对的操作是新增或删除
- 2. 两次事务的结果
- 3. 事务A按照特定条件查询出结果，事务B新增了一条符合条件的数据，事务A中查询的数据和数据库的数据不一致，事务A好像出现了幻觉，这种情况称为幻读
-</code></pre></li>
+<li>不可重复读：<ol>
+<li>主要针对的是某行数据(或行中某列)</li>
+<li>主要针对的操作是修改操作</li>
+<li>两次读取在同一个事务内</li>
+<li>当事务A第一次读取事务后， 事务B对事务A读取的数据进行修改，事务A中再次读取的数据和之前读取的数据不一致，过程不可重复读</li>
+</ol>
+</li>
+<li>幻读：<ol>
+<li>主要针对的操作是新增或删除</li>
+<li>两次事务的结果</li>
+<li>事务A按照特定条件查询出结果，事务B新增了一条符合条件的数据，事务A中查询的数据和数据库的数据不一致，事务A好像出现了幻觉，这种情况称为幻读</li>
+</ol>
+</li>
 <li>DEFAULT：默认值，由底层数据库自行判断应该使用什么隔离级别</li>
-<li>READ_UNCOMMITTED：可以读取未提交数据，可能出现脏读，不可重复读，幻读<pre><code>1. 效率最高
-</code></pre></li>
+<li>READ_UNCOMMITTED：可以读取未提交数据，可能出现脏读，不可重复读，幻读<ol>
+<li>效率最高</li>
+</ol>
+</li>
 <li>READ_COMMITTED：只能读取其他事务已提交数据，可以防止脏读，可能出现不可重复读和幻读</li>
 <li>REPEATABLE_READ：读取的数据会被添加锁，防止其他事务修改此数据，可以防止不可重复读和脏读，可能出现幻读</li>
-<li>SERIALIZABLE：排队操作，对整个表添加锁，一个事务在操作数据时，另一个事务等待，事务操作完成后才能操作这个表<pre><code>1. 最安全的
-2. 效率最低的
-</code></pre></li>
-<li>rollback-for=”异常类型全限定路径”<pre><code>1. 当出现什么异常时需要进行回滚
- 2. 建议：给定该属性值
- 3. 手动抛出异常一定要给该属性值
-</code></pre></li>
-<li>no-rollback-for=””<pre><code>1. 当出现什么异常时不回滚事务
-</code></pre></li>
+<li>SERIALIZABLE：排队操作，对整个表添加锁，一个事务在操作数据时，另一个事务等待，事务操作完成后才能操作这个表<ol>
+<li>最安全的</li>
+<li>效率最低的</li>
+</ol>
+</li>
+<li>rollback-for=”异常类型全限定路径”<ol>
+<li>当出现什么异常时需要进行回滚</li>
+<li>建议：给定该属性值</li>
+<li>手动抛出异常一定要给该属性值</li>
+</ol>
+</li>
+<li>no-rollback-for=””<ol>
+<li>当出现什么异常时不回滚事务</li>
+</ol>
+</li>
 </ol>
 <h1 id="spring中常用注解"><a href="#spring中常用注解" class="headerlink" title="spring中常用注解"></a>spring中常用注解</h1><ol>
 <li>@Component创建类对象，相当于配置 <code>&lt;bean/&gt;</code></li>
