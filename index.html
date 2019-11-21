@@ -306,7 +306,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/11/21/MFC/" class="post-title-link" itemprop="url">MFC���ĵ���Ŀ���ʵ�ֵ�һ�²˵���ĳһ����ť����һ�����ԶԻ��������ԶԻ�����ֵ��Ϳ��Ի�ͼ</a>
+                <a href="/2019/11/21/MFC/" class="post-title-link" itemprop="url">MFC单文档项目如何实现点一下菜单的某一个按钮弹出一个属性对话框，在属性对话框填值后就可以绘图</a>
               
             
           </h1>
@@ -331,7 +331,7 @@
                 
               
 
-              <time title="创建时间：2019-11-21 18:38:00 / 修改时间：18:38:07" itemprop="dateCreated datePublished" datetime="2019-11-21T18:38:00+08:00">2019-11-21</time>
+              <time title="创建时间：2019-11-21 18:38:00 / 修改时间：18:58:20" itemprop="dateCreated datePublished" datetime="2019-11-21T18:38:00+08:00">2019-11-21</time>
             
 
             
@@ -372,36 +372,36 @@
       
         
           
-            <p>������vs2019</p>
-<p>һ���½�һ�����ĵ�MFC��Ŀ���˴�������ʾ</p>
-<p>��������Դ��ͼ����Menu�µ�IDD_MAINFRAME</p>
+            <p>环境：vs2019</p>
+<p>一、新建一个单文档MFC项目，此处不做演示</p>
+<p>二、打开资源视图，打开Menu下的IDD_MAINFRAME</p>
  <img src="/2019/11/21/MFC/1.png">
-<p>�����Լ���Ҫ�Ĳ˵�</p>
+<p>添加自己需要的菜单</p>
  <img src="/2019/11/21/MFC/2.png">
-<p>�������˵�ѡ�����Ӷ�Ӧ�Ĵ����¼����ڲ˵�ѡ�����Ҽ�-&gt;�����¼���������</p>
+<p>三、给菜单选项添加对应的处理事件，在菜单选项上右键-&gt;添加事件处理程序</p>
  <img src="/2019/11/21/MFC/3.png">
-<p>��������ϣ����һ�²˵�ѡ���һ���Ի�������ֵ�Ϳ��Ի���ͼ�Σ������������ǵĸ���Ӧ��ѡ��View</p>
+<p>我们最终希望点一下菜单选项弹出一个对话框，填上值就可以画出图形，所以这里我们的父类应该选择View</p>
  <img src="/2019/11/21/MFC/4.png">
-<p>ȷ��֮�����Ǿͻᷢ�������ǵ�CXXXView.cpp�ļ��оͻ�������´���</p>
+<p>确定之后我们就会发现在我们的CXXXView.cpp文件中就会出现以下代码</p>
  <img src="/2019/11/21/MFC/5.png">
-<p>������������棬������Ҫʵ�ֵ����Ի���Ĺ��ܣ���������������Ҫ���һ���Ի���</p>
-<p>�ġ���ƶԻ���</p>
-<p>����Դ��ͼ���Ҽ�Dialog��ѡ�����Dialog����ʱ�ͻᵯ��һ���Ի�������ֻ��Ҫ�����ǵĶԻ�������Լ���Ҫ�Ŀؼ�</p>
+<p>在这个函数里面，我们需要实现弹出对话框的功能，所以首先我们需要设计一个对话框</p>
+<p>四、设计对话框</p>
+<p>打开资源视图，右键Dialog，选择插入Dialog。这时就会弹出一个对话框，我们只需要给我们的对话框加上自己需要的控件</p>
  <img src="/2019/11/21/MFC/6.png">
-<p>Ȼ��������Ҫ������Ի�������һ����Ӧ���࣬�ڶԻ��������Ҽ������������</p>
+<p>然后我们需要给这个对话框添加一个对应的类，在对话框里面右键点击添加类向导</p>
  <img src="/2019/11/21/MFC/7.png">
-<p>Ȼ�����Ӧ�Ŀؼ����ӱ������˴�������ʾ</p>
-<p>�����������򵼵ĳ�Ա�������濴���Լ����ӵı���</p>
+<p>然后给相应的控件添加变量，此处不做演示</p>
+<p>最后可以在类向导的成员变量里面看到自己添加的变量</p>
  <img src="/2019/11/21/MFC/8.png">
-<p>�ڶԻ����cpp�ļ����Կ����Լ�����������</p>
-<p>�����ڶԻ����캯��������������ֵ</p>
+<p>在对话框的cpp文件可以看到自己定义的类变量</p>
+<p>可以在对话框构造函数里给类变量赋初值</p>
  <img src="/2019/11/21/MFC/9.png">
-<p>���������Ѿ���ɵĶԻ���Ĵ��������ھ�����ôʵ�ֵ���˵�ѡ��ͶԻ���Ĺ����ˡ�</p>
-<p>������Ҫ����˵�ѡ��Ϳ��Ե�����֮��Ӧ�ĶԻ�����ô���Ǿ���Ҫ�ڲ˵�ѡ���Ӧ�Ĵ����������������Ի���</p>
-<p>�塢�����˵�ѡ��Ͷ�Ӧ�ĶԻ���</p>
-<p>�ڲ˵�ѡ���Ӧ�Ĵ�������������öԻ������Ǿ���Ҫʹ��DoModal()����</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Line dialog;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(dialog.DoModal()==IDOK)&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//���öԻ�����Ҫ����������</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>��if���������Լ����öԻ���֮����Ҫ���������񣬴�ʱ���Ǿ�����˲˵�ѡ��Ͷ�Ӧ�Ի���Ĺ���</p>
+<p>到此我们已经完成的对话框的创建，现在就是怎么实现点击菜单选项和对话框的关联了。</p>
+<p>我们想要点击菜单选项就可以弹出与之对应的对话框，那么我们就需要在菜单选项对应的处理函数里调用这个对话框</p>
+<p>五、关联菜单选项和对应的对话框</p>
+<p>在菜单选项对应的处理函数里面调用对话框，我们就需要使用DoModal()函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Line dialog;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(dialog.DoModal()==IDOK)&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用对话框需要处理的事务</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在if里面添加自己调用对话框之后需要处理的事务，此时我们就完成了菜单选项和对应对话框的关联</p>
  <img src="/2019/11/21/MFC/10.gif">
           
         
